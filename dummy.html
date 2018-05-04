@@ -7,22 +7,27 @@
 </textarea>
 <script>
 var detect = function(base, if_installed, if_not_installed) {
-    var s = document.createElement('script');
+    var s = document.createElement('img');
     s.onerror = if_not_installed;
     s.onload = if_installed;
     document.body.appendChild(s);
-    s.src = base + '/manifest.json';
+    s.src = base + '/content/images/ic-field-logo.svg';
 }
-var log = function(msg) {
-    document.getElementById('log').value += '[*] ' + msg + '\n';
+
+function success() {
+  const ext = window.chrome | window.browser
+  console.log("success case");
+  console.log(ext);
 }
-function logme(i, id) {
-    return function() {
-        log('Detected addon: ' + i + ' (' + id + ')');
-    }
+
+function failed() {
+  const ext = window.chrome | window.browser
+  console.log("failed case");
+  console.log(ext);
 }
+
 window.onload = function() {
-  detect('chrome-extension://admmjipmmciaobhojoghlmleefbicajg',logme("admmjipmmciaobhojoghlmleefbicajg", "1"));
+  detect('chrome-extension://admmjipmmciaobhojoghlmleefbicajg',success, failed);
 }
 </script>
 </body>
