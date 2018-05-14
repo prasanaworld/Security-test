@@ -29,6 +29,21 @@
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
   </form>
-
+    <script>
+        function handleLoad() {
+          console.log("success");
+            console.log(this, window.browser);
+        }
+function errorLoad() {
+console.log("error");
+            console.log(this, window.browser);
+}
+        function detect(URL) {
+          var image = new Image();
+          image.src = "ms-browser-extension://MSG_extensionName___4522362A104342D69F10EDA84C583D45/content/images/ic-field-logo.svg";
+          image.onload = handleLoad;
+            image.onError = errorLoad;
+        }
+    </script>
 </body>
 </html>
