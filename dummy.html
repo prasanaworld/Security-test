@@ -1,33 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page Title</title>
+</head>
 <body>
-<h1>Chrome addons enumeration</h1>
-<p>By <a rel=me href="http://blog.kotowicz.net">Krzysztof Kotowicz</a>
-<p><a href="http://blog.kotowicz.net/2012/02/intro-to-chrome-addons-hacking.html">More info</a>
-<p>
-<textarea style="width:90%" rows=5 id=log>
-</textarea>
-<script>
-var detect = function(base, if_installed, if_not_installed) {
-    var s = document.createElement('img');
-    s.onerror = if_not_installed;
-    s.onload = if_installed;
-    document.body.appendChild(s);
-    s.src = base + '/content/images/ic-field-logo.svg';
-}
 
-function success() {
-  const ext = window.chrome | window.browser
-  console.log("success case");
-  console.log(ext);
-}
+<form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
 
-function failed() {
-  const ext = window.chrome | window.browser
-  console.log("failed case");
-  console.log(ext);
-}
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" id="username" name="username" required>
 
-window.onload = function() {
-  detect('chrome-extension://admmjipmmciaobhojoghlmleefbicajg',success, failed);
-}
-</script>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="password" name="password" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+
 </body>
+</html>
