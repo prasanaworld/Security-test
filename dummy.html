@@ -2,43 +2,45 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Page Title</title>
+<title>Title of the document</title>
 </head>
+
 <body>
+<div class="row">
+        <div class="small-10 small-offset-1 medium-4 medium-offset-4 large-4 large-offset-4 columns">
+<form action="/id/" id="signInForm" method="post"><input id="RedirectUrl" name="RedirectUrl" type="hidden" value="/library/">                <div>
+                    <label for="Username">Email or Username</label>
+                    <input autocapitalize="none" autocorrect="off" data-val="true" data-val-required="The Email or Username field is required." id="Username" name="Username" tabindex="1" type="text" value="">
+                </div>
+                <div>
+                    <label for="Password">Password</label>
+                    <input data-val="true" data-val-required="The Password field is required." id="Password" name="Password" tabindex="2" type="password">
+                </div>
+<input id="ShowCaptcha" name="ShowCaptcha" type="hidden" value="False">
+<input id="ReCaptchaSiteKey" name="ReCaptchaSiteKey" type="hidden" value="6LeVIgoTAAAAAIhx_TOwDWIXecbvzcWyjQDbXsaV">                <div>
+                    <div class="left forgot-password">
+                        <p>
+                            <a href="/id/ForgotPassword">Forgot password?</a>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <button type="submit" class="button primary" id="login">
+                            Sign In
+                        </button>
+                    </div>
+                </div>
+</form>            <div style="clear: both;"></div>
 
-<form class="modal-content animate" action="">
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" id="username" name="username" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" id="password" name="password" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+            <p class="text-center alternate-links" style="margin-top: 10px; line-height: 2.0;">
+                <a href="https://www.pluralsight.com/pricing">Create account</a>
+                <br>
+                <a href="/id/signin/sso?redirectTo=%2flibrary%2f">
+                    Sign in with company or school
+                </a>
+            </p>
+        </div>
     </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-    <script>
-        function handleLoad() {
-          console.log("success");
-            console.log(this, window.browser);
-        }
-function errorLoad() {
-console.log("error");
-            console.log(this, window.browser);
-}
-        function detect(URL) {
-          var image = new Image();
-          image.src = "ms-browser-extension://MSG_extensionName___4522362A104342D69F10EDA84C583D45/content/images/ic-field-logo.svg";
-          image.onload = handleLoad;
-            image.onError = errorLoad;
-        }
-    </script>
 </body>
+
 </html>
+
