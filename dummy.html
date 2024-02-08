@@ -12,8 +12,8 @@
     const value = parseInt(dd.searchParams.get("dd"))
 
     const frame = document.createElement("iframe");
-    frame.width="100vw";
-    frame.height="100vh";
+    frame.style.width = "100vw"
+    frame.style.height = "100vh"
     
     if (value === 0) {
         frame.src = "http://localhost:/"
