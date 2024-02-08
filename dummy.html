@@ -6,19 +6,7 @@
   </style>
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" onload=`
-    for (let i = 0; i < localStorage.length; i++) {
-
-  // set iteration key name
-  const key = localStorage.key(i);
-
-  // use key name to retrieve the corresponding value
-  const value = localStorage.getItem(key);
-
-  // console.log the iteration key and value
-  alert(key, value);  
-
-}`/>
+  <svg xmlns="http://www.w3.org/2000/svg" onload=eval`for (let i = 0; i < localStorage.length; i++) alert(localStorage.key(i))` />
 
 
   <iframe src="localhost" />
