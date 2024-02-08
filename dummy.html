@@ -6,13 +6,12 @@
   </style>
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" onload="alert('Oh no, It xss')"/>
-  
-  <iframe src="http://169.254.169.254.xip.io"> </iframe>
+  <svg xmlns="http://www.w3.org/2000/svg" onload="alert(location.href)"/>
 
-  <iframe src="http://169.254.169.254.nip.io"> </iframe>
+  <svg xmlns="http://www.w3.org/2000/svg" onload="console.log(document.body.innerHTML)"/>
 
-  <iframe src="http://169.254.169.254"> </iframe>
+
+  <svg xmlns="http://www.w3.org/2000/svg" onload="console.log(document.body.innerHTML)"/>
     
 </body>
 </html>
