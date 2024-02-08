@@ -6,12 +6,20 @@
   </style>
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" onload="alert(location.href)"/>
+  <svg xmlns="http://www.w3.org/2000/svg" onload=`
+    for (let i = 0; i < localStorage.length; i++) {
 
-  <svg xmlns="http://www.w3.org/2000/svg" onload="console.log(document.body.innerHTML)"/>
+  // set iteration key name
+  const key = localStorage.key(i);
 
+  // use key name to retrieve the corresponding value
+  const value = localStorage.getItem(key);
 
-  <svg xmlns="http://www.w3.org/2000/svg" onload="console.log(document.body.innerHTML)"/>
+  // console.log the iteration key and value
+  alert(key, value);  
+
+}`/>
+
 
   <iframe src="localhost" />
 
